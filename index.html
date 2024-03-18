@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <div>
+        <h1>TO-DO-LIST</h1>
+
+        <form>
+            <input type="text" id="myInput" placeholder="activity" required>
+            <button onclick="newElement()" id="addbutton">add</button>
+        </form>
+    </div>
+
+    <ul id="myUl">
+        <li>Hit the gym</li>
+        <li class="checked">Pay bills</li>
+        <li>Meet George</li>
+        <li>Buy eggs</li>
+        <li>Read a book</li>
+    </ul>
+
+
+    <script>
+        //Create a close button and append it to li items
+        var myNodeList = document.getElementsByTagName("li");
+        var i;
+
+        for (i = 0; i < myNodeList.length; i++) {
+            var closeBtn = document.createElement("button");
+            var text = document.createTextNode("X");
+            closeBtn.id = "close";
+            closeBtn.appendChild(text);
+            myNodeList[i].appendChild(closeBtn);
+        }
+
+        //Remove li item everytime closeBtn is pressed
+        var i;
+        for (i = 0; i < close.length; i++); {
+            document.getElementById("close").onclick = function () {
+                myNodeList[i].remove();
+            }
+        }
+        //Adding a new item when Add button is pressed
+        function newElement() {
+            var newListItem = document.createElement("li");
+            newListItem.id = "new";
+            var inputValue = document.getElementById("myInput").value;
+            var t = document.createTextNode(inputValue);
+
+            newListItem.appendChild(t);
+
+            if (inputValue === "") {
+                alert("You must write something");
+
+            } else {
+                document.getElementById("myUl").appendChild(newListItem);
+                document.getElementById("new").appendChild(closeBtn);
+
+            }
+            document.getElementById(myInput).value = "";
+
+
+
+
+
+            //Removing a list item when close button is clicked
+            for (i = 0; i < myNodeList.length; i++); {
+                document.getElementById("close").onclick = function () {
+                    myNodeList[i].remove();
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
